@@ -101,7 +101,7 @@
   .purr-text {
     margin-top: 14px;
     color: #111111;
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* base — overridden by JS */
     height: 32px;
     text-align: center;
     opacity: 0;
@@ -204,6 +204,9 @@ function applyScale(s) {
   catImg.style.transform = "translate(-50%, -50%) scale(" + s.toFixed(3) + ")";
   const radius = Math.max(0, 50 - (s - 1) * 25);
   catImg.style.borderRadius = radius + "%";
+  // grow purr text with scale: 1.3rem base up to ~8rem at max scale
+  const fs = 1.3 + (s - 1) * 1.7;
+  purrText.style.fontSize = fs.toFixed(2) + "rem";
 }
 
 function onPet(x, y) {
