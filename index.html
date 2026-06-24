@@ -122,12 +122,12 @@
     background: #fff;
   }
   .flash-overlay.bang {
-    animation: flashBang 0.6s ease-out forwards;
+    animation: flashBang 0.25s ease-out forwards;
   }
   @keyframes flashBang {
     0%   { opacity: 0; }
-    10%  { opacity: 1; }
-    30%  { opacity: 1; }
+    5%   { opacity: 0.6; }
+    20%  { opacity: 0.6; }
     100% { opacity: 0; }
   }
   #explosion-img {
@@ -142,13 +142,13 @@
     opacity: 0;
   }
   #explosion-img.bang {
-    animation: explodePop 0.6s ease-out forwards;
+    animation: explodePop 0.25s ease-out forwards;
   }
   @keyframes explodePop {
-    0%   { opacity: 0;   transform: translate(-50%, -50%) scale(0.5); }
-    15%  { opacity: 1;   transform: translate(-50%, -50%) scale(1.1); }
-    35%  { opacity: 1;   transform: translate(-50%, -50%) scale(1);   }
-    100% { opacity: 0;   transform: translate(-50%, -50%) scale(1.2); }
+    0%   { opacity: 0;   transform: translate(-50%, -50%) scale(0.8); }
+    10%  { opacity: 1;   transform: translate(-50%, -50%) scale(1.05); }
+    25%  { opacity: 1;   transform: translate(-50%, -50%) scale(1);   }
+    100% { opacity: 0;   transform: translate(-50%, -50%) scale(1.1); }
   }
 </style>
 </head>
@@ -282,7 +282,7 @@ function triggerExplosion() {
   setTimeout(() => {
     overlay.classList.remove("bang");
     expImg.classList.remove("bang");
-  }, 650);
+  }, 280);
 }
 
 container.addEventListener("touchstart", (e) => {
