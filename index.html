@@ -222,12 +222,11 @@ container.addEventListener("mousedown", (e) => {
   lastX = e.clientX; lastY = e.clientY;
   audio.play().catch(() => {});
 });
-container.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove", (e) => {
   if (!isPetting) return;
   onPet(e.clientX, e.clientY);
 });
-window.addEventListener("mouseup",       () => { isPetting = false; });
-container.addEventListener("mouseleave", () => { isPetting = false; });
+window.addEventListener("mouseup", () => { isPetting = false; });
 
 container.addEventListener("touchstart", (e) => {
   e.preventDefault();
